@@ -1,6 +1,11 @@
 <script setup>
   import * as gambar from '../assets/images'
-  import * as datas from '../assets/js/data'
+  import {
+    categories,
+    fasilitas,
+    infoPMB,
+    kampus,
+    } from '../assets/js/data'
 </script>
 
 <template>
@@ -88,7 +93,7 @@
         <p class="section-text">Program Sarjana (S1)</p>
 
         <ul class="grid-list">
-          <li v-for="(item, index) in datas.categories[0]" :key="index">
+          <li v-for="(item, index) in categories[0]" :key="index">
             <div class="category-card" :style="{ '--color' : `${item.color[0]}, ${item.color[1]}%, ${item.color[2]}%`}">
               <div class="card-icon">
                 <img
@@ -113,7 +118,7 @@
         <p class="section-text">Program Diploma (D3)</p>
         
         <ul class="grid-list">
-          <li v-for="(item, index) in datas.categories[1]" :key="index">
+          <li v-for="(item, index) in categories[1]" :key="index">
             <div class="category-card" :style="{ '--color': `${item.color[0]}, ${item.color[1]}%, ${item.color[2]}%`}">
               <div class="card-icon">
                 <img
@@ -287,7 +292,7 @@
         <h2 class="h2 section-title">Nikmati fasilitas yang tersedia</h2>
 
         <ul class="grid-list">
-          <li v-for="(item, index) in datas.fasilitas" :key="index">
+          <li v-for="(item, index) in fasilitas" :key="index">
             <div class="course-card">
               <figure
                 class="card-banner img-holder"
@@ -329,7 +334,7 @@
         <p class="section-subtitle">Info PMB</p>
         <h2 class="h2 section-title">Informasi seputar PMB</h2>
         <ul class="grid-list">
-          <li style="padding-top: 100px" v-for="(item, index) in datas.infoPMB" :key="index">
+          <li style="padding-top: 100px" v-for="(item, index) in infoPMB" :key="index">
             <div class="blog-card">
               <div class="card-content">
                 <a href="#" class="card-btn" aria-label="read more">
@@ -417,7 +422,7 @@
         <h2 class="h2 section-title">Cabang Kampus</h2>
 
         <ul class="grid-list">
-          <li v-for="(item, index) in datas.kampus" :key="index">
+          <li v-for="(item, index) in kampus" :key="index">
             <div class="blog-card">
               <figure
                 class="card-banner img-holder has-after"

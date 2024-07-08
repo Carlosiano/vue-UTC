@@ -1,7 +1,9 @@
 <script setup>
 import * as gambar from "../assets/images";
+import { navLinks } from "../assets/js/data";
 // let active = false;
 </script>
+
 <script>
 export default {
   data() {
@@ -33,24 +35,8 @@ export default {
           </button>
         </div>
         <ul class="navbar-list">
-          <li class="navbar-item">
-            <a href="#home" class="navbar-link" data-nav-link>Beranda</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#jenjang" class="navbar-link" data-nav-link>Jenjang</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#why" class="navbar-link" data-nav-link>Mengapa UTC</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#fasilitas" class="navbar-link" data-nav-link>Fasilitas</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#info" class="navbar-link" data-nav-link>Info</a>
+          <li class="navbar-item" v-for="(item, index) in navLinks" :key="index" @click="isActive = !isActive">
+            <a :href="`#${item.href}`" class="navbar-link" data-nav-link>{{ item.title }}</a>
           </li>
         </ul>
       </nav>
