@@ -1,4 +1,5 @@
 <script setup>
+import { chevronUp } from './assets/images';
 import { Header, Main, Footer } from './components';
 </script>
 
@@ -34,8 +35,8 @@ export default {
     - #BACK TO TOP
   -->
 
-  <a href="#top" class="back-top-btn" :class="{active : scrollY > 100}" aria-label="back top top" data-back-top-btn>
-    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  <a href="#top" class="back-top-btn" :class="{ active: scrollY > 100 }" aria-label="back top top" data-back-top-btn>
+    <div class="ion-icon" :style="{ 'mask-image': `url(${chevronUp})` }" aria-hidden="true"></div>
   </a>
 
 </template>
